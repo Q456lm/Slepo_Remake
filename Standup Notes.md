@@ -23,7 +23,7 @@ Angel:
 
 Marcus:
 - What I did: Created Standup Notes and Blockers Log
-- What I’m doing:
+- What I’m doing: Chicken butt
 - Blocked:
 
 ## Summary
