@@ -71,35 +71,38 @@ Today we:
 - Discussed any more features we can add
 - Added overlays and music.
 
-# STANDUP NOTES — Day 2 (Feb 6th, Friday)
-
+# STANDUP NOTES — Day 3 (Feb 6th, Friday)
+ 
 ## Attendance
 - Afton — PRESENT  
 - Chris — PRESENT  
 - Angel — PRESENT  
 - Marcus — PRESENT
-
+ 
 ## Stand up:
 Afton:
-- What I did:
-- What I’m doing:
-- Blocked: time
-
+- What I did: test code
+- What I’m doing: Put in more students
+- Blocked: None
+ 
 Christopher:
-- What I did:
-- What I’m doing:
-- Blocked: time
-
+- What I did: Continuing on game
+- What I’m doing: finishing touches
+- Blocked: None
+ 
 Angel:
-- What I did:
-- What I’m doing:
-- Blocked: time
-
+- What I did: Put in christopher files/code
+- What I’m doing: edit stand up, thinking of extra features. 
+- Blocked: None
+ 
 Marcus:
-- What I did:
-- What I’m doing:
-- Blocked: time
-
+- What I did: Created Overlays for Start, Pause, and Lose screen. Added music while playing Minecraft.
+- What I’m doing: Continue on styling the project and thinking of extra features. 
+- Blocked: None
+ 
 ## Summary
 Today we:
-
+- Are putting the finishing touches on code/game
+- Made sure the music works
+- updated md files
+ 
