@@ -126,8 +126,10 @@ document.addEventListener("keypress", function (event) {
             if (pause) {
                 minecraftAudio.pause();
                 pauseOverlay.style = "display: flex;";
-            } else {
+            } else if (!gaming && !pause) {
                 pauseOverlay.style = "display: none;";
+            } else {
+                minecraftAudio.play();
             }
             playing = !playing
         }
