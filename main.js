@@ -149,7 +149,7 @@ async function handleScore() {
  
             if (gaming) {
                 edgeTime += 1;
-                edgeDiv.textContent = "Edge: " + edgeTime;
+                edgeDiv.textContent = "Play Time: " + edgeTime;
             }
  
             if (score > highestScore) {
