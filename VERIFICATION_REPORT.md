@@ -5,41 +5,35 @@
 **Date:** 2/16/26  
 
 ## Summary
-
-- **Total Bugs from Week 6:** 3  
+- **Total Bugs from Week 6:** 4  
 - **Bugs Verified as Fixed:** 3  
-- **Bugs Still Present:** 0  
+- **Bugs Still Present:** 1
 - **Regressions Found:** 0  
 
 ## Bug Verification Details
-
 For each bug reported in Week 6, document whether the fix worked.
 
 ### 1. Reset Mechanic Not Working
-
 - **Original Issue:** After losing, the play again button doesn’t work  
 - **Severity:** **Critical** / High / Medium / Low  
 - **Status:** ☐ **Fixed** ☐ Still Present ☐ Partially Fixed  
 
-**Verification Notes:**  
-When the player loses, the game does not properly loop to allow the user to play again. Instead, it returns to the screen shown before losing. The fix involved setting the player’s location back to the start of the game so the user begins from the correct starting point.
+**Verification Notes:** When you lose it does not allow a loop so the user can play again. Instead, it just goes to the screen the user saw before they lost. Put the location too the start of the game so the user starts there.
 
 ### 2. Pause Mechanic Not Actually Pausing Game
-
 - **Original Issue:** Pause does not actually pause the game  
 - **Severity:** Critical / **High** / Medium / Low  
-- **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed
+- **Status:** ☐ **Fixed** ☐ Still Present ☐ Partially Fixed
+
+ **Verification Notes:** Pausing just doesn't work intended while having the pause overlay on. Fixed by toggling overlay on and pausing on and vice versa when unpausing.
 
 ### 3. Sound Effects Not Properly Playing When Intended
 
 - **Original Issue:** New bug reported by QA team  
-- **Severity:** Critical / High / Medium / Low  
-- **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed  
+- **Severity:** Critical / High / Medium / **Low**  
+- **Status:** ☐ Fixed ☐ **Still Present** ☐ Partially Fixed  
 
-**Verification Notes:**  
-Minecraft music continued playing even when the user was not playing Minecraft. The fix updated the pause conditional to check whether the user was actively playing Minecraft before allowing the music to continue.
-
----
+**Verification Notes:**  When not playing Minecraft, the Minecraft music still plays. Changed the conditional when pausing to include checking if the user was playing Minecraft before pausing.
 
 ### 4. People Appearing Multiple Times
 
@@ -47,14 +41,19 @@ Minecraft music continued playing even when the user was not playing Minecraft. 
 - **Severity:** Critical / High / Medium / Low  
 - **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed  
 
-**Verification Notes:**  
-While playing the game, the same character appears multiple times. The issue remains unresolved because the root cause has not yet been identified.
+**Verification Notes:**  When playing the game the same character shows multiple times. Unable to fix since we can’t find the root cause.
 
----
+### 5. Play Time Called Edge Instead of Play Time
+- **Original Issue:** Not originally found  
+- **Severity:** Critical / High / Medium / Low  
+- **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed
 
-**Verification Notes:**  
-The pause overlay appeared, but the game continued running in the background. This was fixed by properly toggling both the overlay and the game pause state together, and reversing both actions when unpausing.
+**Verification Notes:** Had to change within the .js file because it was continuously getting re
 
-### 3. Sound Effects Not Properly Playing When Intended
+## Overall Assessment
+**Game Status After Fixes:** We have our MVP and fixed the bugs found by QA Team. 
+**Recommendation for Dev Team:** Fix multiple people appearing if needed
 
-- **Original Issue:** New bug
+## Sign-Off
+**QA Team:** Christopher, Afton, Angel, Marcus P.
+**Verification completed:** 2/16/26
