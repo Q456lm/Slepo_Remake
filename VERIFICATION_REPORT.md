@@ -38,15 +38,15 @@ For each bug reported in Week 6, document whether the fix worked.
 ### 4. People Appearing Multiple Times
 
 - **Original Issue:** Students walking and sitting on desks appear multiple times  
-- **Severity:** Critical / High / Medium / Low  
-- **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed  
+- **Severity:** Critical / High / **Medium** / Low  
+- **Status:** ☐ Fixed ☐ **Still Present** ☐ Partially Fixed  
 
 **Verification Notes:**  When playing the game the same character shows multiple times. Unable to fix since we can’t find the root cause.
 
 ### 5. Play Time Called Edge Instead of Play Time
 - **Original Issue:** Not originally found  
-- **Severity:** Critical / High / Medium / Low  
-- **Status:** ☐ Fixed ☐ Still Present ☐ Partially Fixed
+- **Severity:** Critical / High / Medium / **Low**  
+- **Status:** ☐ **Fixed** ☐ Still Present ☐ Partially Fixed
 
 **Verification Notes:** Had to change within the .js file because it was continuously getting re
 
