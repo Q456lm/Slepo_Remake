@@ -17,11 +17,11 @@ Arcade / simulation
 # ✨ Gaining (and Losing) Aura
  
 You can gain Aura by:
-- 🟩 Playing Minecraft  
+- 🟩 Playing Minecraft, the more students playing the more aura.  
 - 😎 Playing **Minecraft in front of your classmates** (they respect the grind)
  
 You **lose Aura** if:
-- 😬 You play lowkey (lame behavior)
+- 😬 You play lowkey (Not playing at all)
  
 ⚠️ **Warning:**  
 Your teachers **do NOT understand us**.  
@@ -49,7 +49,7 @@ Or are you **lame =/**
   - Get caught by the teacher
 
 # ⌨️ Controls 
-- **SPACE** — Switch between:
+- **Use Numbers 1-5** — Switch between:
   - Playing Minecraft
   - “Doing school work”
 - **P** — Pause the game (if you’re playing IRL)
@@ -61,14 +61,7 @@ To start the game, press the **“Start Button”**, you big idiot.
 # Why We Chose [This Game Type]
 - It reflect who we are as individuals and us as WECIB. Thank you for the happiest years of my life.
  
-# Scope Decisions
-## prioritize
-- The game has to increase in aura points when you play. The game has to end if the teachers catch you.
-## defer
-- Some teachers give you extra aura points
-- You can trade aura point for upgrades
- 
-# Incomplete Features
+# Not Included
 [Upgrades]: lack of time, Complete in next sprint if time permits <br>
 [Tutorial]: Not implemented because of readme, low priority
  
