@@ -3,7 +3,13 @@
  ****************************************************/
 let playing = false;          // Game has started
 let pause = false;            // Game is paused
-let gaming = true;            // Player is "gaming" vs "school"
+let gaming = false;            // Player is "gaming" vs "school"
+let gaming1 = false;
+let gaming2 = false;
+let gaming3 = false;
+let gaming4 = false;
+let gaming5 = false;
+let gamingCount = 0;
 let died = false;             // Player death state
 let score = 0;                // Current score
 let highestScore = 0;         // Highest score achieved
@@ -20,7 +26,11 @@ const MAX_TEACHER_CHANCE = 0.65;   // Maximum teacher spawn ratio
 /****************************************************
  * DOM Elements
  ****************************************************/
-const computer = document.getElementById("computer");
+const computer1 = document.getElementById("computer1");
+const computer2 = document.getElementById("computer2");
+const computer3 = document.getElementById("computer3");
+const computer4 = document.getElementById("computer4");
+const computer5 = document.getElementById("computer5");
 const scoreDiv = document.getElementById("score_div");
 const edgeDiv = document.getElementById("time_div");
  
@@ -75,9 +85,17 @@ fakeStudents.forEach(student => {
 /****************************************************
  * Player Student Setup
  ****************************************************/
-const student_player = document.getElementById("student_player");
+const student1 = document.getElementById("student1");
+const student2 = document.getElementById("student2");
+const student3 = document.getElementById("student3");
+const student4 = document.getElementById("student4");
+const student5 = document.getElementById("student5");
 const randomNumber = Math.floor(Math.random() * 16) + 1;
-student_player.src = "images/students/student" + randomNumber + ".png";
+student1.src = "images/students/student" + (Math.floor(Math.random() * 16) + 1) + ".png";
+student2.src = "images/students/student" + (Math.floor(Math.random() * 16) + 1) + ".png";
+student3.src = "images/students/student" + (Math.floor(Math.random() * 16) + 1) + ".png";
+student4.src = "images/students/student" + (Math.floor(Math.random() * 16) + 1) + ".png";
+student5.src = "images/students/student" + (Math.floor(Math.random() * 16) + 1) + ".png";
  
 /****************************************************
  * Start Game Button
@@ -100,12 +118,39 @@ document.addEventListener("keypress", function (event) {
     const keyName = event.key;
  
     // Toggle gaming state (space bar)
-    if (keyName == " ") {
+    if (keyName == "1") {
+            if (playing) {
+                click.play();
+                gaming1 = !gaming1;
+                if (gaming1){
+                    gamingCount++;
+                }else{
+                    gamingCount--
+                }
+ 
+                computer1.src = gaming1
+                    ? "images/computer_minecraft.png"
+                    : "images/computer_school.png";
+ 
+                if (gaming) {
+                    minecraftAudio.play();
+                } else {
+                    minecraftAudio.pause();
+                }  
+        }
+    }
+    if (keyName == "2") {
         if (playing) {
             click.play();
-            gaming = !gaming;
+            gaming2 = !gaming2;
+
+            if (gaming2){
+                    gamingCount++;
+            }else{
+                gamingCount--
+            }
  
-            computer.src = gaming
+            computer2.src = gaming2
                 ? "images/computer_minecraft.png"
                 : "images/computer_school.png";
  
@@ -115,6 +160,78 @@ document.addEventListener("keypress", function (event) {
                 minecraftAudio.pause();
             }
         }
+    }
+    if (keyName == "3") {
+        if (playing) {
+            click.play();
+            gaming3 = !gaming3;
+
+            if (gaming3){
+                    gamingCount++;
+            }else{
+                gamingCount--
+            }
+ 
+            computer3.src = gaming3
+                ? "images/computer_minecraft.png"
+                : "images/computer_school.png";
+ 
+            if (gaming) {
+                minecraftAudio.play();
+            } else {
+                minecraftAudio.pause();
+            }
+        }
+    }
+    if (keyName == "4") {
+        if (playing) {
+            click.play();
+            gaming4 = !gaming4;
+
+            if (gaming4){
+                    gamingCount++;
+            }else{
+                gamingCount--
+            }
+ 
+            computer4.src = gaming4
+                ? "images/computer_minecraft.png"
+                : "images/computer_school.png";
+ 
+            if (gaming) {
+                minecraftAudio.play();
+            } else {
+                minecraftAudio.pause();
+            }
+        }
+    }
+    if (keyName == "5") {
+        if (playing) {
+            click.play();
+            gaming5 = !gaming5;
+
+            if (gaming5){
+                    gamingCount++;
+            }else{
+                gamingCount--
+            }
+ 
+            computer5.src = gaming5
+                ? "images/computer_minecraft.png"
+                : "images/computer_school.png";
+ 
+            if (gaming) {
+                minecraftAudio.play();
+            } else {
+                minecraftAudio.pause();
+            }
+        }
+    }
+
+    if (gamingCount > 0){
+        gaming = true;
+    }else{
+        gaming = false;
     }
  
     // Pause toggle (P key)
@@ -145,7 +262,25 @@ async function handleScore() {
         await wait(1000);
  
         if (playing) {
-            score += gaming ? 1 : -0.5;
+            if (gamingCount == 0){
+                score -= 0.5;
+            }
+            else if (gamingCount == 1){
+                score -= 0;
+            }
+            else if (gamingCount == 2){
+                score += 0.5;
+            }
+            else if (gamingCount == 3){
+                score += 1;
+            }
+            else if (gamingCount == 4){
+                score += 1.5;
+            }
+            else if (gamingCount == 5){
+                score += 1.5;
+            }
+
  
             if (gaming) {
                 edgeTime += 1;
@@ -212,8 +347,8 @@ function movePeople() {
         // Mid-screen interaction logic
         if (person.x >= 35 && person.x <= 55) {
             if (person.isStudent) {
-                if (gaming) {
-                    score += 0.025;
+                if (gaming3) {
+                    score += 0.02;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -222,7 +357,115 @@ function movePeople() {
                     scoreDiv.textContent = "Aura: " + score.toFixed(1);
                 }
             } else {
-                if (gaming) {
+                if (gaming3) {
+                    died = true;
+                    playing = false;
+ 
+                    minecraftAudio.pause();
+ 
+                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalEdge.innerHTML = "Edge Time: " + edgeTime;
+ 
+                    deathOverlay.style = "display: flex;";
+                    gameOverAudio1.play();
+                    gameOverAudio2.play();
+                }
+            }
+        }
+        if (person.x >= 15 && person.x <= 35) {
+            if (person.isStudent) {
+                if (gaming2) {
+                    score += 0.02;
+ 
+                    if (score > highestScore) {
+                        highestScore = score;
+                    }
+ 
+                    scoreDiv.textContent = "Aura: " + score.toFixed(1);
+                }
+            } else {
+                if (gaming2) {
+                    died = true;
+                    playing = false;
+ 
+                    minecraftAudio.pause();
+ 
+                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalEdge.innerHTML = "Edge Time: " + edgeTime;
+ 
+                    deathOverlay.style = "display: flex;";
+                    gameOverAudio1.play();
+                    gameOverAudio2.play();
+                }
+            }
+        }
+        if (person.x >= 0 && person.x <= 15) {
+            if (person.isStudent) {
+                if (gaming1) {
+                    score += 0.02;
+ 
+                    if (score > highestScore) {
+                        highestScore = score;
+                    }
+ 
+                    scoreDiv.textContent = "Aura: " + score.toFixed(1);
+                }
+            } else {
+                if (gaming1) {
+                    died = true;
+                    playing = false;
+ 
+                    minecraftAudio.pause();
+ 
+                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalEdge.innerHTML = "Edge Time: " + edgeTime;
+ 
+                    deathOverlay.style = "display: flex;";
+                    gameOverAudio1.play();
+                    gameOverAudio2.play();
+                }
+            }
+        }
+            if (person.x >= 55 && person.x <= 75) {
+            if (person.isStudent) {
+                if (gaming4) {
+                    score += 0.02;
+ 
+                    if (score > highestScore) {
+                        highestScore = score;
+                    }
+ 
+                    scoreDiv.textContent = "Aura: " + score.toFixed(1);
+                }
+            } else {
+                if (gaming4) {
+                    died = true;
+                    playing = false;
+ 
+                    minecraftAudio.pause();
+ 
+                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalEdge.innerHTML = "Edge Time: " + edgeTime;
+ 
+                    deathOverlay.style = "display: flex;";
+                    gameOverAudio1.play();
+                    gameOverAudio2.play();
+                }
+            }
+        }
+        if (person.x >= 75 && person.x <= 90) {
+            if (person.isStudent) {
+                if (gaming5) {
+                    score += 0.02;
+ 
+                    if (score > highestScore) {
+                        highestScore = score;
+                    }
+ 
+                    scoreDiv.textContent = "Aura: " + score.toFixed(1);
+                }
+            } else {
+                if (gaming5) {
                     died = true;
                     playing = false;
  
@@ -311,16 +554,57 @@ async function handlePeople() {
 /****************************************************
  * Player Animation
  ****************************************************/
-let bounceTime = 0;
+let bounceTime1 = 0;
+let bounceTime2 = 0;
+let bounceTime3 = 0;
+let bounceTime4 = 0;
+let bounceTime5 = 0;
  
 function animateStudent() {
-    if (gaming && playing && !pause && !died) {
-        bounceTime += 0.15;
-        const bounce = Math.sin(bounceTime) * 25;
-        student_player.style.transform = `translateY(${bounce}px)`;
-    } else {
-        student_player.style.transform = "translateY(0px)";
-        bounceTime = 0;
+    if (gaming1 && playing && !pause && !died) {
+        bounceTime1 += 0.15;
+        const bounce1 = Math.sin(bounceTime1) * 25;
+        student1.style.transform = `translateY(${bounce1}px)`;
+    }
+    else if (!(!gaming1 && (gaming2 || gaming3 || gaming4 || gaming5))){
+        student1.style.transform = "translateY(0px)";
+        bounceTime1 = 0;
+    }
+    if (gaming2 && playing && !pause && !died) {
+        bounceTime2 += 0.15;
+        const bounce2 = Math.sin(bounceTime2) * 25;
+        student2.style.transform = `translateY(${bounce2}px)`;
+    }
+    else if (!(!gaming2 && (gaming1 || gaming3 || gaming4 || gaming5))){
+        student2.style.transform = "translateY(0px)";
+        bounceTime2 = 0;
+    }
+    if (gaming3 && playing && !pause && !died) {
+        bounceTime3 += 0.15;
+        const bounce3 = Math.sin(bounceTime3) * 25;
+        student3.style.transform = `translateY(${bounce3}px)`;
+    }
+    else if (!(!gaming3 && (gaming2 || gaming1 || gaming4 || gaming5))){
+        student3.style.transform = "translateY(0px)";
+        bounceTime3 = 0;
+    }
+    if (gaming4 && playing && !pause && !died) {
+        bounceTime4 += 0.15;
+        const bounce4 = Math.sin(bounceTime4) * 25;
+        student4.style.transform = `translateY(${bounce4}px)`;
+    }
+    else if (!(!gaming4 && (gaming2 || gaming3 || gaming1 || gaming5))){
+        student4.style.transform = "translateY(0px)";
+        bounceTime4 = 0;
+    }
+    if (gaming5 && playing && !pause && !died) {
+        bounceTime5 += 0.15;
+        const bounce5 = Math.sin(bounceTime5) * 25;
+        student5.style.transform = `translateY(${bounce5}px)`;
+    }
+    else if (!(!gaming5 && (gaming2 || gaming3 || gaming4 || gaming1))){
+        student5.style.transform = "translateY(0px)";
+        bounceTime5 = 0;
     }
  
     requestAnimationFrame(animateStudent);
