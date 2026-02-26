@@ -263,19 +263,19 @@ async function handleScore() {
  
         if (playing) {
             if (gamingCount == 0){
-                score -= 0.5;
+                score -= 1;
             }
             else if (gamingCount == 1){
-                score -= 0;
+                score -= 0.1;
             }
             else if (gamingCount == 2){
-                score += 0.5;
+                score += 0.3;
             }
             else if (gamingCount == 3){
-                score += 1;
+                score += 0.7;
             }
             else if (gamingCount == 4){
-                score += 1.5;
+                score += 1.2;
             }
             else if (gamingCount == 5){
                 score += 1.5;
@@ -348,7 +348,7 @@ function movePeople() {
         if (person.x >= 35 && person.x <= 55) {
             if (person.isStudent) {
                 if (gaming3) {
-                    score += 0.02;
+                    score += 0.01;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -363,7 +363,7 @@ function movePeople() {
  
                     minecraftAudio.pause();
  
-                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalScore.innerHTML = "Score: " + highestScore.toFixed(1);
                     finalEdge.innerHTML = "Edge Time: " + edgeTime;
  
                     deathOverlay.style = "display: flex;";
@@ -375,7 +375,7 @@ function movePeople() {
         if (person.x >= 15 && person.x <= 35) {
             if (person.isStudent) {
                 if (gaming2) {
-                    score += 0.02;
+                    score += 0.01;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -390,7 +390,7 @@ function movePeople() {
  
                     minecraftAudio.pause();
  
-                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalScore.innerHTML = "Score: " + highestScore.toFixed(1);
                     finalEdge.innerHTML = "Edge Time: " + edgeTime;
  
                     deathOverlay.style = "display: flex;";
@@ -402,7 +402,7 @@ function movePeople() {
         if (person.x >= 0 && person.x <= 15) {
             if (person.isStudent) {
                 if (gaming1) {
-                    score += 0.02;
+                    score += 0.01;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -417,7 +417,7 @@ function movePeople() {
  
                     minecraftAudio.pause();
  
-                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalScore.innerHTML = "Score: " + highestScore.toFixed(1);
                     finalEdge.innerHTML = "Edge Time: " + edgeTime;
  
                     deathOverlay.style = "display: flex;";
@@ -429,7 +429,7 @@ function movePeople() {
             if (person.x >= 55 && person.x <= 75) {
             if (person.isStudent) {
                 if (gaming4) {
-                    score += 0.02;
+                    score += 0.01;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -444,7 +444,7 @@ function movePeople() {
  
                     minecraftAudio.pause();
  
-                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalScore.innerHTML = "Score: " + highestScore.toFixed(1);
                     finalEdge.innerHTML = "Edge Time: " + edgeTime;
  
                     deathOverlay.style = "display: flex;";
@@ -456,7 +456,7 @@ function movePeople() {
         if (person.x >= 75 && person.x <= 90) {
             if (person.isStudent) {
                 if (gaming5) {
-                    score += 0.02;
+                    score += 0.01;
  
                     if (score > highestScore) {
                         highestScore = score;
@@ -471,7 +471,7 @@ function movePeople() {
  
                     minecraftAudio.pause();
  
-                    finalScore.innerHTML = "High Score: " + highestScore.toFixed(1);
+                    finalScore.innerHTML = "Score: " + highestScore.toFixed(1);
                     finalEdge.innerHTML = "Edge Time: " + edgeTime;
  
                     deathOverlay.style = "display: flex;";
