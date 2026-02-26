@@ -1,4 +1,4 @@
-This is edited version of Not WECIB Minecraft Simulator with the purpose of allowing you to control all 5 students
+This is edited version of Not WECIB Minecraft Simulator with the purpose of allowing you to control all 5 students.
 Original Game: [https://github.com/x68gh5zdjt-lab/Slepo](https://github.com/x68gh5zdjt-lab/Slepo)
 
 # **Not WECIB Minecraft Simulator**!
