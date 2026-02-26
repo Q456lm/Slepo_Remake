@@ -9,7 +9,7 @@
 You gotta **play Minecraft in class** to gain **Aura**.  
 And trust me—**Aura is everything**. Stack as much of it as you can.
 ## Play browser
-- Click: [htpss://x68gh5zdjt-lab.github.io/Slepo/](https://x68gh5zdjt-lab.github.io/Slepo/)
+- Click: [https://q456lm.github.io/Slepo_Remake/](https://q456lm.github.io/Slepo_Remake/)
 
 # Games type
 Arcade / simulation
