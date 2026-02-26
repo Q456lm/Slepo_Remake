@@ -319,7 +319,7 @@ function summonCharacter(isStudent) {
     document.body.appendChild(person);
  
     const startsLeft = Math.random() < 0.5;
-    const currentX = startsLeft ? -2.5 : 100;
+    const currentX = startsLeft ? -10.5 : 100;
  
     person.style.left = `calc(${currentX}% - 20px)`;
  
@@ -506,7 +506,7 @@ function movePeople() {
         }
  
         // Off-screen cleanup
-        if (person.x <= -10 || person.x >= 100.5) {
+        if (person.x <= -30 || person.x >= 100.5) {
             deadPeople.push(i);
         }
     }
